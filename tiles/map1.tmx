@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="walltiles" tilewidth="16" tileheight="16">
+  <image source="tutorialtiles.png" width="64" height="64"/>
+  <terraintypes>
+   <terrain name="New Terrain" tile="-1"/>
+   <terrain name="WallMiddle" tile="2"/>
+   <terrain name="WallLeft" tile="1"/>
+   <terrain name="WallRight" tile="3"/>
+   <terrain name="strangerdanger" tile="4"/>
+   <terrain name="wallleftbelow" tile="5"/>
+   <terrain name="wallmiddlebelow" tile="6"/>
+   <terrain name="wallrightbelow" tile="7"/>
+   <terrain name="brick" tile="0"/>
+  </terraintypes>
+  <tile id="0" terrain=",7,,"/>
+  <tile id="3" terrain="2,,,"/>
+  <tile id="4" terrain=",3,,"/>
+  <tile id="5" terrain=",4,,"/>
+  <tile id="6" terrain=",,,5"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
+</map>
