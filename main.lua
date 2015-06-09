@@ -256,7 +256,7 @@ function love.load()
   wallCreator:addWall(100,500,100)
   wallCreator:addWall(200,300,100)
   wallCreator:addWallWithHeight(500,540,30,60)
-  wallCreator:addWall(0,level.maxY,level.maxX) 
+  wallCreator:addWallWithHeight(0,level.maxY,level.maxX,100d) 
   --wallCreator:createSteps(100,500,100,5,1)
  -- wallCreator:createSteps(800,10,100,5,-1)
  -- wallCreator:createSteps(1000,10,100,10,1)
@@ -882,9 +882,9 @@ end
     v:update(dt)
     --print(v.speed)
   end
-  if (Hero.pos.y < 600 or Hero.pos.x < -10 or Hero.pos.x > 6000) then
-      Hero.pos = vector(500,600)
-  end
+  --if (Hero.pos.y < 600 or Hero.pos.x < -10 or Hero.pos.x > 6000) then
+  --    Hero.pos = vector(500,600)
+  --end
   
 else
   sounds["gameover"]:play()
