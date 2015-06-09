@@ -158,9 +158,9 @@ function createProjectile(entity, target)
     if other == Hero.box then
       print("hit hero")
       sounds["heroHitHard"]:play()
-      --if (not invincibility) then
+      if (not invincibility) then
       Hero.health = Hero.health - 50
-      --end
+      end
     end
   end
     
@@ -882,6 +882,10 @@ end
     v:update(dt)
     --print(v.speed)
   end
+  if (Hero.pos.y < 600 or Hero.pos.x < -10 or Hero.pos.x > 6000) then
+      Hero.pos = vector(500,600)
+  end
+  
 else
   sounds["gameover"]:play()
   lost = true
@@ -1000,9 +1004,9 @@ function createHero()
     if other == senatorDreddBoss.box then
         Hero.vel.x = senatorDreddBoss.vel.x*10
         Hero.vel.y = -1*senatorDreddBoss.vel.x*5
-        --if (not invincibility) then
-      Hero.health = Hero.health - 10
-      --end
+       if (not invincibility) then
+		Hero.health = Hero.health - 10
+      end
     end
     if other == senatorDreddBoss.vision_circle then
       senatorDreddBoss.currentState = senatorDreddBoss.HeroVisibleState
@@ -1013,7 +1017,9 @@ function createHero()
     end
   for i,v in pairs(projectiles) do
     if other == v.box then
+	if (not invincibility) then
       Hero.health = Hero.health-50
+	 end
       sounds["heroHitHard"]:play()
       table.remove(projectiles,i)
     end
@@ -1112,7 +1118,7 @@ function createHero()
  elseif love.keyboard.isDown('f2') then
    debug = false
    invincibility = false
-elseif love.keyboard.isDown('f3') then
+elseif love.keyboard.isDown('escape') then
   invincibility = true
   
   end
